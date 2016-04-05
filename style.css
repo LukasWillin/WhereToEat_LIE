@@ -18,3 +18,12 @@ table {
 .navi:hover {
     background-color: aqua;
 }
+
+.navi a {
+    text-decoration: none;
+    background-color: brown;
+}
+
+td label {
+    height: 100%;
+}
