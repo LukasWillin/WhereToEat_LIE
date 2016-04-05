@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>WhereToEat</title>
+</head>
+<body>
+<h3 id="titleBar">Where To Eat!</h3>
+<table>
+    <tr id="buttonBar">
+        <td class="navi" link="">Where</td>
+        <td class="navi">Who</td>
+        <td class="navi">What</td>
+    </tr>
+    <tr>
+        <td>Who</td>
+    </tr>
+</table>
+
+</body>
+</html>
