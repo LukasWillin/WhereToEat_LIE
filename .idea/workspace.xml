@@ -101,7 +101,12 @@
         <option value="$PROJECT_DIR$/What.html" />
         <option value="$PROJECT_DIR$/Who.html" />
         <option value="$PROJECT_DIR$/WhereToEat.html" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/logik.js" />
+=======
+        <option value="$PROJECT_DIR$/What.html" />
+        <option value="$PROJECT_DIR$/style.css" />
+>>>>>>> 32ed5b6a970101647ba327aef96b548a234d153f
       </list>
     </option>
   </component>
@@ -225,7 +230,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
+<<<<<<< HEAD
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
+=======
+    <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
+>>>>>>> 32ed5b6a970101647ba327aef96b548a234d153f
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27142859" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -337,8 +346,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/WhereToEat.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.5">
-          <caret line="13" column="28" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
+        <state vertical-scroll-proportion="-3.6764705">
+          <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
           <folding />
         </state>
       </provider>
@@ -353,8 +362,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/What.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.5">
-          <caret line="13" column="45" selection-start-line="13" selection-start-column="45" selection-end-line="13" selection-end-column="45" />
+        <state vertical-scroll-proportion="-5.147059">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
           <folding />
         </state>
       </provider>

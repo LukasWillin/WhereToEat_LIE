@@ -1,4 +1,3 @@
-
 table {
     width: 100%;
     height: 100%;
@@ -13,9 +12,11 @@ table {
     text-align: center;
     border: 1px solid black;
     width: 33%;
+    background-color: lightgray;
 }
 
 .navi:hover {
+<<<<<<< HEAD
     background-color: aqua;
 }
 
@@ -26,4 +27,17 @@ table {
 
 td label {
     height: 100%;
+=======
+    background-color: grey;
+    text-color: white;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: inherit;
+>>>>>>> 32ed5b6a970101647ba327aef96b548a234d153f
 }
