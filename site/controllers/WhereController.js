@@ -6,3 +6,4 @@
  * This controller will hold functionality that is used
  * and affects the 'where'-aspect of the site
  */
+
