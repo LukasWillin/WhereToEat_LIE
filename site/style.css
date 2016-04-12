@@ -29,3 +29,17 @@ td label {
 .navig:hover {
     background-color: coral;
 }
+
+#where-screen {
+    height: 400px;
+    background-color: greenyellow;
+}
+
+main > div {
+    display: none;
+}
+
+main div.active {
+    display:block;
+
+}
