@@ -6,26 +6,29 @@
     <script type="text/javascript" src="libs/jquery-2.2.1.js"></script>
     <script type="text/javascript" src="controllers/WhereController.js"></script>
     <script type = "text/javascript"
-            src='http://maps.googleapis.com/maps/api/js?libraries=places&sensor=true&v=3'></script>
+            src='http://maps.googleapis.com/maps/api/js?libraries=place&v=3'></script>
 </head>
 <body>
 <h3 id="titleBar">Where To Eat!</h3>
-<table>
-    <tr id="buttonBar">
-        <td>
-            <a href="index.html" class="navig" id="WhereB">Where</a>
-        </td>
-        <td>
-            <a href="Who.html" class="navig" id="WhoB">Who</a>
-        </td>
-        <td>
-            <a href="What.html" class="navig" id="WhatB">What</a>
-        </td>
-    </tr>
-    <tr>
-        <td>Karte</td>
-        <div id = "where-screen"></div>
-    </tr>
-</table>
+
+<header>
+    <nav>
+        <ul>
+            <li><a class="nav-to-where">Where</a></li>
+            <li><a class="nav-to-who">Who</a></li>
+            <li><a class="nav-to-what">What</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <div w3-include-html="Where.html"></div>
+
+    <div w3-include-html="Who.html"></div>
+
+    <div class="active" w3-include-html="What.html"></div>
+</main>
+
+<script src="lib/w3-include-HTML.js"></script>
 </body>
 </html>
