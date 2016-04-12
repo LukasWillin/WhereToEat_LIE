@@ -29,3 +29,8 @@ td label {
 .navig:hover {
     background-color: coral;
 }
+
+#where-screen{
+    height: 500px;
+    position: absolute;
+}
