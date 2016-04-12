@@ -29,3 +29,11 @@ td label {
 .navig:hover {
     background-color: coral;
 }
+
+main > div {
+    display: none;
+}
+
+main div.active {
+    display:block;
+}

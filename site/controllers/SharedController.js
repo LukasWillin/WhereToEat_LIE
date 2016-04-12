@@ -7,7 +7,6 @@
  * by all views of the site
  */
 
-
 $(document).ready(function()
 {
 });
