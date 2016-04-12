@@ -31,9 +31,8 @@ td label {
 }
 
 #where-screen {
-    height: 500px;
-    width:500px;
-    position: fixed;
+    height: 400px;
+    background-color: greenyellow;
 }
 
 main > div {

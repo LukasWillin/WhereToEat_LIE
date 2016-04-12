@@ -8,11 +8,12 @@
  */
 
 $('document').ready(function() {
-    var getPosition = function(position){
+    var getPosition = function(position) {
         console.log(position.coords.latitude, position.coords.longitude);
-    }
 
+    }
     window.navigator.geolocation.getCurrentPosition(getPosition);
+
 
     var here = new google.maps.LatLng(47.3, 45.3);
 //--> Objekt wird als Center Property in den Karten-Optionen gesetzt.
@@ -23,7 +24,6 @@ $('document').ready(function() {
 //Sicherstellen, dass Element mit der ID=where-screen eine Höhe hat
 //Sonst wird die Karte nicht sichtbar.
     var map = new google.maps.Map(document.getElementById('where-screen'), mapOptions);
-    map.getZoom(); // --> 15
 });
 
 
