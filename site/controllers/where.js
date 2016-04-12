@@ -14,6 +14,7 @@ $('document').ready(function() {
     }
     window.navigator.geolocation.getCurrentPosition(getPosition);
 
+
     var here = new google.maps.LatLng(47.3, 45.3);
 //--> Objekt wird als Center Property in den Karten-Optionen gesetzt.
 
