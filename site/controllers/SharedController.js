@@ -9,4 +9,10 @@
 
 $(document).ready(function()
 {
+    // Load all scripts
+    $.getScript("controllers/WhatController.js", function(){});
+    $.getScript("controllers/WhereController.js", function(){});
+    $.getScript("controllers/WhoController.js", function(){});
+
+
 });
