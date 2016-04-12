@@ -7,37 +7,25 @@ table {
     text-align: center;
 }
 
-.navi {
-    height: inherit;
-    text-align: center;
-    border: 1px solid black;
-    width: 33%;
-    background-color: lightgray;
-}
-
-.navi:hover {
-<<<<<<< HEAD
-    background-color: aqua;
-}
-
-.navi a {
-    text-decoration: none;
-    background-color: brown;
-}
-
 td label {
     height: 100%;
-=======
     background-color: grey;
     text-color: white;
 }
 
-a {
+.navig {
+    padding: 2px 30% 2px;
+    background-color: darkcyan;
+    border-radius: 5px;
+    color: whitesmoke;
+    font-style: normal;
     text-decoration: none;
-    color: black;
+    text-align: center;
+    font-weight: bolder;
+    font-family: Arial;
+    box-shadow: 0px 3px 8px #777777;
 }
 
-a:hover {
-    color: inherit;
->>>>>>> 32ed5b6a970101647ba327aef96b548a234d153f
+.navig:hover {
+    background-color: coral;
 }

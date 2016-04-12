@@ -2,6 +2,11 @@
  * Created by Lukas W on 15.03.2016.
  */
 
+/**
+ * This controller holds functionality that is shared
+ * by all views of the site
+ */
+
 /*
 constants
  */
@@ -20,12 +25,11 @@ var results = 0;
 
 $(document).ready(function()
 {
+    //.html('index.html'); //.reload()('index.html'); //.open('WhereToEat.html');
+    //$('#WhoB').on('click').html('Who.html'); //.open('Who.html');
+    //$('#WhatB').on('click').open('What.html');
 
-    $('WhereB').on('click').open('WhereToEat.html');
-    $('WhoB').on('click').open('Who.html');
-    $('WhatB').on('click').open('What.html');
-
-    /*
+    /********* OLD SAMPLE CODE FOR BASIC JQUERY AND JAVASCRIPT ****************
      When evaluating button has been clicked
 
     $('#evaluate').on('click', function (event) {
@@ -65,30 +69,30 @@ $(document).ready(function()
 });
 
 
-/*
- Checking for perfect-matches and color-matches
- */
+/**
+ * Checking for perfect-matches and color-matches
+ */ /*
 var evaluateF = function(code, challenge) {
-    /* Array holding black pins */
+    // Array holding black pins
     var perfect_match = 0;
-    /* Array holding white pins */
+    // Array holding white pins
     var color_match = 0;
 
     var working_challenge = challenge.slice(0);
     var working_code = code.slice();
 
-    /* Do we have a perfect matches? */
+    // Do we have a perfect matches?
     working_code.forEach( function(curNum, index) {
         if (working_challenge[index] == curNum) {
             ++perfect_match;
 
-            /* delete information -> already evaluated */
+            // delete information -> already evaluated
             working_challenge[index] = 0;
             working_code[index] = 0;
         }
     } );
 
-    /* If not check if other matches exist */
+    // If not check if other matches exist
     working_code.forEach( function(curNum, index) {
         if (curNum != 0) {
             var continueForEach = true;
@@ -97,11 +101,11 @@ var evaluateF = function(code, challenge) {
                 if (continueForEach && curChallNum == curNum) {
                     ++color_match;
 
-                    /* delete information -> already evaluated */
+                    // delete information -> already evaluated
                     working_challenge[challIndex] = 0;
                     working_code[index] = 0;
 
-                    /* stop evaluating */
+                    // stop evaluating
                     continueForEach = false;
                 }
             } );
@@ -131,3 +135,4 @@ var fillInColors = function(perfectM, colorM) {
     }
 
 };
+*/
