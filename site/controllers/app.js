@@ -1,5 +1,5 @@
 /**
- * Created by Lukas W on 15.03.2016.
+ * Created by Lukas Willin, Emil Sturzenegger, Irina Terribilini
  */
 
 /**
@@ -7,8 +7,8 @@
  * by all views of the site
  */
 
-$(document).ready(function()
-{
+$('document').ready(function() {
+
     // Definitions (global variables)
 
 
