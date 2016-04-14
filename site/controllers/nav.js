@@ -8,7 +8,7 @@
  */
 
 /**
- * Click event listener für navigations elemente. Verbergt nicht aktive elemente mit CSS visibility oder zeigt sie an.
+ * Click event listener für navigations elemente. Verbirgt nicht aktive elemente mit CSS visibility oder zeigt sie an.
  */
 $("nav ul > li").click(function() {
     var myClass = this;

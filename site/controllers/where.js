@@ -24,7 +24,8 @@ function initialize() {
     }
     window.navigator.geolocation.getCurrentPosition(getPosition);
 }
-    initialize();
+
+initialize();
 
 
 
