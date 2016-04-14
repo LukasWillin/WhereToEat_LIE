@@ -1,5 +1,5 @@
 /**
- * Created by Emil S on 12.04.2016.
+ * Created by Lukas Willin, Emil Sturzenegger, Irina Terribilini
  */
 
 /**
@@ -7,17 +7,18 @@
  * and affects the navigation of the site
  */
 
-$("li > a").click(function() {
+/**
+ * Click event listener für navigations elemente. Verbirgt nicht aktive elemente mit CSS visibility oder zeigt sie an.
+ */
+$("nav ul > li").click(function() {
     var myClass = this;
     var myClassAttr = myClass.className;
 
-    $("main > div").forEach(function(e) {
-        if(e.attr("id") === myClassAttr && !e.hasClass("active")) {
-            e.addClass("active");
-        }
-        else {
-            e.removeClass("active");
-        }
+    console.log("clicked");
 
-    })
+    var screens = $("main > section").get();
+
+    $("section").removeClass("active");
+    $("section").addClass("inactive");
+    $("section#"+myClassAttr).removeClass("inactive").addClass("active");
 });

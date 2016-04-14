@@ -1,5 +1,5 @@
 /**
- * Created by Lukas W on 11.04.2016.
+ * Created by Lukas Willin, Emil Sturzenegger, Irina Terribilini
  */
 
 /**

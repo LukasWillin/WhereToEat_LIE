@@ -35,11 +35,12 @@ td label {
     background-color: greenyellow;
 }
 
-main > div {
-    display: none;
+.inactive {
+    visibility: hidden;
+    height: 0;
 }
 
-main div.active {
-    display:block;
-
+.active {
+    visibility: visible;
+    height: auto;
 }
