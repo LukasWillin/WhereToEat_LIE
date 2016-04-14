@@ -7,10 +7,6 @@
  * and affects the 'where'-aspect of the site
  */
 
-$('document').ready(function() {
-    initialize();
-});
-
 function initialize() {
     var here = new google.maps.LatLng(8, 45);
     //--> Objekt wird als Center Property in den Karten-Optionen gesetzt.
@@ -28,8 +24,7 @@ function initialize() {
     }
     window.navigator.geolocation.getCurrentPosition(getPosition);
 }
-
-
+    initialize();
 
 
 
