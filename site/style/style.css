@@ -1,0 +1,57 @@
+/*
+ * Inhaltsverzeichnis:
+ * - Globale stylings
+ * - Header
+ *  - Navigation
+ * - Where view
+ * - Who view
+ * - What view
+ */
+
+/* Globale stylings */
+table {
+    width: 100%;
+    height: 100%;
+}
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+/* Header */
+#titleBar {
+    text-align: center;
+}
+
+/* Navigation */
+@media(min-width: 767px) {
+    .navbar-nav {
+        display:table;
+        width:100%;
+        margin: 0;
+    }
+    .navbar-nav > li {
+        float:none;
+        display:table-cell;
+        text-align:center;
+    }
+}
+.inactive {
+    visibility: hidden;
+    height: 0;
+}
+.active {
+    visibility: visible;
+    height: auto;
+}
+
+/* Where view */
+#where-screen {
+    height: 400px;
+    background-color: greenyellow;
+}
+
+/* Who view */
+
+
+/* What view */
+
