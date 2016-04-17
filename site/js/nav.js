@@ -5,10 +5,12 @@
  * and affects the navigation of the site
  */
 
+console.log("Loaded nav.js");
+
 /**
- * Click event listener für navigations elemente. Verbirgt nicht aktive elemente mit CSS visibility oder zeigt sie an.
+ * Klick Event Listener für Navigationselemente. Verbirgt nicht aktive Elemente mit CSS Visibility oder zeigt sie an.
  */
-$("nav ul > li").click(function() {
+$("nav ul > li").click(function(event) {
     var myClass = this;
     var myClassAttr = myClass.className;
     var screens = $("main > section").get();

@@ -5,14 +5,12 @@
  * by all views of the site
  */
 
+console.log("Loaded app.js");
+
 /**
  * Executes the other js files and provides them global variables
  */
-$('document').ready(function() {
-
-    // Closure Variabeln und lokale Speichervariabeln Initialisierungen
-    var map;
-    var markers;
+$("document").ready(function() {
 
     // Lade alle Scripts
     $.getScript("js/nav.js", function(){});

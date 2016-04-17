@@ -5,10 +5,14 @@
  * and affects the 'where'-aspect of the site
  */
 
+console.log("Loaded where.js");
+
 /**
  * Initialisiert Map und nimmt die aktuelle Position.
+ *
+ * @returns {google.maps.Map}
  */
-function initialize() {
+function initialize(markers) {
     var here = new google.maps.LatLng(8, 45);
     //--> Objekt wird als Center Property in den Karten-Optionen gesetzt.
 
@@ -17,15 +21,24 @@ function initialize() {
 
     //Sicherstellen, dass Element mit der ID=where-screen eine Höhe hat
     //Sonst wird die Karte nicht sichtbar.
-    map = new google.maps.Map(document.getElementById('where-screen'), mapOptions);
+    var map = new google.maps.Map(document.getElementById('where-screen'), mapOptions);
 
-    setCenter();
+    setCenter(map);
+
+    // Wenn Markers parameter besteht sollen diese gesetzt werden.
+    if(typeof markers !== 'undefined') {
+        // TODO
+    }
+
+    return map;
 }
 
 /**
  * Setzt das Zentrum einer Map auf den aktuellen Standort.
+ *
+ * @param map Google Maps Objekt
  */
-function setCenter() {
+function setCenter(map) {
     if(navigator.geolocation) {
         window.navigator.geolocation.getCurrentPosition(
             function(position){
@@ -43,13 +56,24 @@ function setCenter() {
 /**
  * Handler um Gelocation Probleme abzuhandeln.
  *
- * @param errorFlag true für Service Problem und false für unterstützungs Problem
+ * @param errorFlag True für Service Problem und false für unterstützungs Problem
  */
 function handleNoGeolocation(errorFlag) {
     if (errorFlag == true) console.log("Geolocation service failed.");
     else console.log("Your browser doesn't support geolocation.");
 
     map.setCenter("Brugg");
+}
+
+function setMarkers(tag) {
+    var markers = [];
+
+    // Suche nach Marker mit einem Tag
+    // TODO
+
+    // Zeichne Map neu und gebe Daten an who View
+    initialize(markers);
+    listMarkers(markers);
 }
 
 initialize();
