@@ -27,7 +27,6 @@ body {
  * 1. Add the correct display in Edge, IE, and Firefox.
  * 2. Add the correct display in IE.
  */
-
 article,
 aside,
 details, /* 1 */
@@ -44,9 +43,8 @@ summary { /* 1 */
 }
 
 /**
- * Add the correct display in IE 9-.
+ * Adds the correct display in IE 9-.
  */
-
 audio,
 canvas,
 progress,
@@ -55,9 +53,8 @@ video {
 }
 
 /**
- * Add the correct display in iOS 4-7.
+ * Adds the correct display in iOS 4-7.
  */
-
 audio:not([controls]) {
     display: none;
     height: 0;
@@ -66,7 +63,6 @@ audio:not([controls]) {
 /**
  * Add the correct vertical alignment in Chrome, Firefox, and Opera.
  */
-
 progress {
     vertical-align: baseline;
 }
@@ -75,7 +71,6 @@ progress {
  * Add the correct display in IE 10-.
  * 1. Add the correct display in IE.
  */
-
 template, /* 1 */
 [hidden] {
     display: none;
@@ -88,7 +83,6 @@ template, /* 1 */
  * 1. Remove the gray background on active links in IE 10.
  * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
  */
-
 a {
     background-color: transparent; /* 1 */
     -webkit-text-decoration-skip: objects; /* 2 */
