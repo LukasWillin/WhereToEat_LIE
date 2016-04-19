@@ -13,8 +13,9 @@ console.log("Loaded app.js");
 $("document").ready(function() {
 
     // Lade alle Scripts
-    $.getScript("js/nav.js", function(){});
     $.getScript("js/what.js", function(){});
+    $.getScript("js/nav.js", function(){});
+
     $.getScript("js/where.js", function(){});
     $.getScript("js/who.js", function(){});
 
