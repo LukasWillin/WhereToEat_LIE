@@ -16,18 +16,18 @@ $("#Search").click(function(event) {
     event.preventDefault();
 
     // Read value from
-    var tag = $("#SearchTag").val();
+    var tags = $("#SearchTag").val();
 
     // Create array from text
-    var tagArray = tag.split(',').map( function(s) {
+    var tagsArray = tags.split(',').map( function(s) {
         return s.trim();
     })
 
-    console.log(tagArray);
+    console.log(tagsArray);
 
     // clear values from input
     $("#SearchTag").val("");
 
     // Hand over tags to the where.js controller
-    setMarkers(tag);
+    setMarkers(tags);
 });

@@ -8,8 +8,8 @@
 console.log("Loaded who.js");
 
 /**
- * Erstellt eine Liste der Markers mit genaueren Angaben zu den einzelnen Resultaten
- * @param markers Ein Array mit Markerobjekten
+ * Erstellt eine Liste der Orte mit genaueren Angaben zu den einzelnen Resultaten
+ * @param markers Ein Array mit Places Objekten
  */
 function listMarkers(markers) {
     // TODO
