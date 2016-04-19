@@ -2,6 +2,7 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
+
     <link rel="stylesheet" type="text/css" href="style/normalize.css"/>
     <link rel="stylesheet" type="text/css" href="style/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="style/style.css"/>
@@ -10,7 +11,7 @@
 
 <header>
     <h3 id="titleBar">Where To Eat!</h3>
-    <nav class="navbar navbar-default">
+    <nav id="Nav" class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
@@ -25,7 +26,7 @@
                 <ul class="nav navbar-nav">
                     <li class="Where"><a href="#">Where</a></li>
                     <li class="Who"><a href="#">Who</a></li>
-                    <li class="What active"><a href="#">What</a></li>
+                    <li class="active What"><a href="#">What</a></li>
                 </ul>
             </div>
         </div>
@@ -33,11 +34,49 @@
 </header>
 
 <main>
-    <section id="Where" class="inactive" w3-include-html="Where.html"></section>
+    <section id="Where" class="inactive">
+        <div id="where-screen"></div>
+    </section>
 
-    <section id="Who" class="inactive" w3-include-html="Who.html"></section>
+    <section id="Who" class="inactive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Restaurant</th>
+                <th>Beschreibung</th>
+                <th>Telefon</th>
+                <th>Webseite</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Testrestaurant</td>
+                <td>TestrestaurantBeschreibung</td>
+                <td>TestrestaurantTelefon</td>
+                <td>http://www.TestrestaurantWebseite.com</td>
+            </tr>
+            <tr>
+                <td>Testrestaurant2</td>
+                <td>Testrestaurant2Beschreibung</td>
+                <td>Testrestaurant2Telefon</td>
+                <td>http://www.Testrestaurant2Webseite.com</td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
 
-    <section id="What" class="active" w3-include-html="What.html"></section>
+    <section id="What" class="active">
+        <div class="jumbotron">
+            <div class="container">
+                <h1>Willkommen auf Where to eat!</h1>
+                <p>Gib unten dein Wunsch ein und wir suchen es für dich</p>
+                <input id="SearchTag" type="text" class="form-control" placeholder="Pizza, Spagetti, Poulet...">
+                <br/>
+                <p><button id="Search" class="btn btn-primary btn-lg" href="#Search" role="button">Suchen</button></p>
+            </div>
+        </div>
+    </section>
+
 </main>
 
 <script type = "text/javascript"
