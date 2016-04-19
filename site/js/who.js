@@ -9,7 +9,7 @@ console.log("Loaded who.js");
 
 /**
  * Erstellt eine Liste der Markers mit genaueren Angaben zu den einzelnen Resultaten
- * @param markers Ein Array mit Markers
+ * @param markers Ein Array mit Markerobjekten
  */
 function listMarkers(markers) {
     // TODO

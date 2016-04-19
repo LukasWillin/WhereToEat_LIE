@@ -65,15 +65,20 @@ function handleNoGeolocation(errorFlag) {
     map.setCenter("Brugg");
 }
 
+/**
+ * Sucht Markers gemäss dem erhaltenen Tag und setzt diese auf die Map. Initiert die Erstellung der Listenansicht.
+ *
+ * @param tag Suchbegriff
+ */
 function setMarkers(tag) {
-    var markers = [];
+    // TODO
+    //var markers = [];
 
     // Suche nach Marker mit einem Tag
-    // TODO
 
     // Zeichne Map neu und gebe Daten an who View
-    initialize(markers);
-    listMarkers(markers);
+    //initialize(markers);
+    //listMarkers(markers);
 }
 
 initialize();
