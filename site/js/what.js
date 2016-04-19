@@ -12,10 +12,22 @@ console.log("Loaded what.js");
  * gefunden worden sind. Ansosten werden die Markers gesetzt.
  */
 $("#Search").click(function(event) {
-    // TODO
-    //event.preventDefault();
-    //var tag = $("#SearchTag").attr('value');
 
-    // Übergebe Tag für andere Funktion
-    //setMarkers(tag);
+    event.preventDefault();
+
+    // Read value from
+    var tag = $("#SearchTag").val();
+
+    // Create array from text
+    var tagArray = tag.split(',').map( function(s) {
+        return s.trim();
+    })
+
+    console.log(tagArray);
+
+    // clear values from input
+    $("#SearchTag").val("");
+
+    // Hand over tags to the where.js controller
+    setMarkers(tag);
 });
