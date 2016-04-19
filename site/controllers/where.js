@@ -26,6 +26,7 @@ function initialize() {
     window.navigator.geolocation.getCurrentPosition(getPosition);
 }
 
+<<<<<<< HEAD
     function initMap(getWhat) {
         var WhatLatLng = {lat: getWhat.latitude(), lng: getWhat.longitude()};
 
@@ -46,6 +47,9 @@ function initialize() {
 
 initialize();
 initMap();
+=======
+initialize();
+>>>>>>> f9a7159d87bffb17d99663a0540a8af9e3d4d4db
 
 
 
