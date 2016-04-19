@@ -14,5 +14,3 @@ console.log("Loaded who.js");
 function listMarkers(markers) {
     // TODO
 }
-
-createWhoView();
