@@ -8,7 +8,7 @@
 console.log("Loaded what.js");
 
 /**
- * Klick Event Listener für Such Button. Sucht nach dem entsprechenden Tag und gibt einen Fehler aus falls keine
+ * Klick Event Listener für Such-Button. Sucht nach dem entsprechenden Tag und gibt einen Fehler aus falls keine
  * gefunden worden sind. Ansosten werden die Markers gesetzt.
  */
 $("p").click(function(event) {

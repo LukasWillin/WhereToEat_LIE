@@ -25,7 +25,7 @@ function initialize(markers) {
 
     setCenter(map);
 
-    // Wenn Markers parameter besteht sollen diese gesetzt werden.
+    // Wenn Markers parameter besteht, sollen diese gesetzt werden.
     if(typeof markers !== 'undefined') {
         // TODO
     }
