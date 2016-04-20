@@ -14,8 +14,7 @@ console.log("Loaded where.js");
  */
 function initializeMap() {
     setCurrentPosition();
-    console.log("Hallo");
-    console.log(getCurrentPosition());
+
     //Diese beiden Properties sind zwingend nötig
     var mapOptions = {center: getCurrentPosition(), zoom: 15};
 

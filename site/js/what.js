@@ -14,19 +14,15 @@ console.log("Loaded what.js");
 $("#Search").click(function(event) {
     event.preventDefault();
 
-    // Read value from
+    // Lese Wert
     var tags = $("#SearchTag").val();
 
-    // Create array from text
-    var tagsArray = tags.split(',').map( function(s) {
-        return s.trim();
-    })
-
-    console.log(tagsArray);
-
-    // clear values from input
+    // Bereinige Input
     $("#SearchTag").val("");
 
-    // Hand over tags to the where.js controller
+    // Übergebe tags an where.js
     setMarkers(tags);
+
+    // Wechsle zur where Seite
+    pageChange("Where");
 });
