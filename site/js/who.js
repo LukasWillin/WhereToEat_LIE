@@ -11,12 +11,15 @@ console.log("Attempting to load who.js");
  * Erstellt eine Liste der Orte mit genaueren Angaben zu den einzelnen Resultaten
  * @param an array of type placeResult
  */
-function listMarkers(places) {
+function listPlaces(places) {
 
-    $("#whoTableBody").remove();
-
-    $("#Who table thead").after("" +
-        "<tbody id='whoTableBody'></tbody>")
+    if (document.getElementById("whoTableBody") == null) {
+        $("#Who table thead").after("" +
+            "<tbody id='whoTableBody'></tbody>")
+        console.log("Table body created");
+    } else {
+        console.log("Table body already exists");
+    }
 
     places.forEach( function(place) {
 
@@ -31,7 +34,9 @@ function listMarkers(places) {
     });
 }
 
-
-
+function deletePlacesList() {
+    $("#whoTableBody").remove();
+    console.log("table body removed")
+}
 
 console.log("Loaded who.js")
