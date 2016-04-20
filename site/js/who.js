@@ -9,22 +9,25 @@ console.log("Attempting to load who.js");
 
 /**
  * Erstellt eine Liste der Orte mit genaueren Angaben zu den einzelnen Resultaten
- * @param markers Ein Array mit Places Objekten
+ * @param an array of type placeResult
  */
 function listMarkers(places) {
 
-    //See walking the dom
+    $("#whoTableBody").remove();
 
-    places.forEach( function(marker) {
-        var det = marker.getDetails();
+    $("#Who table thead").after("" +
+        "<tbody id='whoTableBody'></tbody>")
+
+    places.forEach( function(place) {
+
         var placeDescription = $("" +
             "<tr>" +
-            "   <td>"+det.name+"</td>" +
-            "   <td>"+det.formatted_phone_number+"</td>" +
-            "   <td>"+det.website+"</td>" +
-            "   <td>"+det.rating+"</td>" +
+            "   <td>"+place.name+"</td>" +
+            "   <td>"+place.formatted_phone_number+"</td>" +
+            "   <td>"+place.website+"</td>" +
+            "   <td>"+place.rating+"</td>" +
             "</tr>");
-        $("#whoTableBody > tr").last().after(placeDescription);
+        $("#whoTableBody").append(placeDescription);
     });
 }
 
