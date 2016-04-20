@@ -82,12 +82,11 @@ function setMarkers(tags) {
             keyword: tag
         }, function(results, status) {
             if(status === google.maps.places.PlacesServiceStatus.OK ) {
-                // Creates list in Who view
-                listMarkers(results);
                 // Setzt Markers auf die Map
                 for (var i = 0; i < results.length; i++) {
                     createMarker(results[i], map);
                 }
+                listMarkers(places);
             } else {
                 // TODO: Nichts gefunden
             }
