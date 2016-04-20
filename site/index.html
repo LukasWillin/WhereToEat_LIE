@@ -5,6 +5,7 @@
 
     <link rel="stylesheet" type="text/css" href="style/normalize.css"/>
     <link rel="stylesheet" type="text/css" href="style/bootstrap.min.css"/>
+    <link rel="stylesheet" href="style/bootstrap-select.min.css">
     <link rel="stylesheet" type="text/css" href="style/style.css"/>
 </head>
 <body>
@@ -70,7 +71,19 @@
             <div class="container">
                 <h1>Willkommen auf Where to eat!</h1>
                 <p>Gib unten dein Wunsch ein und wir suchen es für dich</p>
-                <input id="SearchTag" type="text" class="form-control" placeholder="Pizza, Spagetti, Poulet...">
+                <select class="selectpicker" id="SearchTag" multiple title="Wähle aus...">
+                    <optgroup label="Slow Food">
+                        <option>Pasta</option>
+                        <option>Asiatisch</option>
+                        <option>Rösti</option>
+                    </optgroup>
+                    <optgroup label="Fast Food">
+                        <option>Pizza</option>
+                        <option>Döner</option>
+                        <option>Hot Dog</option>
+                    </optgroup>
+                </select>
+                <br/>
                 <br/>
                 <p><button id="Search" class="btn btn-primary btn-lg" href="#Search" role="button">Suchen</button></p>
             </div>
@@ -83,6 +96,7 @@
         src='http://maps.googleapis.com/maps/api/js?libraries=places&v=3'></script>
 <script type="text/javascript" src="lib/jquery-2.2.1.js"></script>
 <script type="text/javascript" src="lib/bootstrap.min.js"></script>
+<script src="lib/bootstrap-select.min.js"></script>
 <script type="text/javascript" src="js/app.js"></script>
 </body>
 </html>
