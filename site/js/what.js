@@ -12,26 +12,30 @@ console.log("Loaded what.js");
  * gefunden worden sind. Ansosten werden die Markers gesetzt.
  */
 $("#Search").click(function(event) {
+<<<<<<< HEAD
 //<<<<<<< HEAD
+=======
+>>>>>>> a39deacc93e31e7e4db50b23a0f7ca5ef0060cb9
 
     event.preventDefault();
 
     // Read value from
-    var tag = $("#SearchTag").val();
+    var tags = $("#SearchTag").val();
 
     // Create array from text
-    var tagArray = tag.split(',').map( function(s) {
+    var tagsArray = tags.split(',').map( function(s) {
         return s.trim();
     })
 
-    console.log(tagArray);
+    console.log(tagsArray);
 
     // clear values from input
     $("#SearchTag").val("");
 
     // Hand over tags to the where.js controller
-    setMarkers(tag);
+    setMarkers(tags);
 });
+<<<<<<< HEAD
 /*=======
     // TODO
     //event.preventDefault();
@@ -41,3 +45,5 @@ $("#Search").click(function(event) {
     //setMarkers(tag);
 });
 >>>>>>> 172e8f64031aa88f5e21e12f5f42f5a2d7d62e30*/
+=======
+>>>>>>> a39deacc93e31e7e4db50b23a0f7ca5ef0060cb9

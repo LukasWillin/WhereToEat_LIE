@@ -8,7 +8,7 @@
 console.log("Loaded app.js");
 
 /**
- * Executes the other js files and provides them global variables
+ * Führt alle js Dateien aus, sobald der DOM geladen ist
  */
 $("document").ready(function() {
 
