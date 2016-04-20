@@ -8,11 +8,11 @@
 console.log("Loaded where.js");
 
 /**
- * Initialisiert Map und nimmt die aktuelle Position.
+ * Initialisiert neue Map.
  *
- * @returns {google.maps.Map}
+ * @returns {google.maps.Map} Ein Map Objekt
  */
-function initialize(markers) {
+function initialize() {
     var here = new google.maps.LatLng(8, 45);
     //--> Objekt wird als Center Property in den Karten-Optionen gesetzt.
 
@@ -23,13 +23,6 @@ function initialize(markers) {
     //Sonst wird die Karte nicht sichtbar.
     var map = new google.maps.Map(document.getElementById('where-screen'), mapOptions);
 
-    setCenter(map);
-
-    // Wenn Markers parameter besteht sollen diese gesetzt werden.
-    if(typeof markers !== 'undefined') {
-        // TODO
-    }
-
     return map;
 }
 
@@ -39,49 +32,89 @@ function initialize(markers) {
  * @param map Google Maps Objekt
  */
 function setCenter(map) {
+    var center;
     if(navigator.geolocation) {
         window.navigator.geolocation.getCurrentPosition(
             function(position){
-                var initialLocation = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
-                map.setCenter(initialLocation);
+                center = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+                map.setCenter(center);
             },function() {
                 handleNoGeolocation(true);
             });
     } else {
-        handleNoGeolocation(false);
+        center = handleNoGeolocation(false);
     }
 
+    return center;
 }
 
 /**
  * Handler um Gelocation Probleme abzuhandeln.
  *
  * @param errorFlag True für Service Problem und false für unterstützungs Problem
+ * @returns {string} default Ortschaft
  */
 function handleNoGeolocation(errorFlag) {
     if (errorFlag == true) console.log("Geolocation service failed.");
     else console.log("Your browser doesn't support geolocation.");
 
     map.setCenter("Brugg");
+
+    return "Brugg";
 }
 
 /**
- * Sucht Markers gemäss dem erhaltenen Tag und setzt diese auf die Map. Initiert die Erstellung der Listenansicht.
+ * Setzt alle Markers auf eine neue Map.
  *
- * @param tag Suchbegriff
+ * @param tags Array von Suchbegriffen als Strings
  */
-function setMarkers(tag) {
-    // TODO
-    //var markers = [];
+function setMarkers(tags) {
+    // Erstelle neues Maps Objekt
+    var map = initialize();
+    var here = setCenter(map);
 
-    // Suche nach Marker mit einem Tag
-
-    // Zeichne Map neu und gebe Daten an who View
-    //initialize(markers);
-    //listMarkers(markers);
+    for(var tag in tags) {
+        var service = new google.maps.places.PlacesService(map);
+        service.nearbySearch({
+            location: here,
+            radius: 500,
+            types: ['restaurant'],
+            keyword: tag
+        }, function(results, status) {
+            if(status === google.maps.places.PlacesServiceStatus.OK ) {
+                // Creates list in Who view
+                listMarkers(results);
+                // Setzt Markers auf die Map
+                for (var i = 0; i < results.length; i++) {
+                    createMarker(results[i], map);
+                }
+            } else {
+                // TODO: Nichts gefunden
+            }
+        });
+    }
 }
 
-initialize();
+/**
+ * Erstellt ein einzelnes Marker Objekt.
+ *
+ * @param place
+ * @param map
+ */
+function createMarker(place, map) {
+    var placeLoc = place.geometry.location;
+    var marker = new google.maps.Marker({
+        map: map,
+        position: place.geometry.location
+    });
+
+    google.maps.event.addListener(marker, 'click', function() {
+        infowindow.setContent(place.name);
+        infowindow.open(map, this);
+    });
+}
+
+setCenter(initialize());
 
 
 
