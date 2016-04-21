@@ -56,7 +56,19 @@
             <div class="container">
                 <h1>Willkommen auf Where to eat!</h1>
                 <p>Gib unten dein Wunsch ein und wir suchen es für dich</p>
-                <input id="SearchTag" type="text" class="form-control" placeholder="Pizza, Spagetti, Poulet...">
+                <select class="selectpicker" id="SearchTag" multiple title="Wähle aus...">
+                    <optgroup label="Slow Food">
+                        <option>Pasta</option>
+                        <option>Asiatisch</option>
+                        <option>Rösti</option>
+                    </optgroup>
+                    <optgroup label="Fast Food">
+                        <option>Pizza</option>
+                        <option>Döner</option>
+                        <option>Hot Dog</option>
+                    </optgroup>
+                </select>
+                <br/>
                 <br/>
                 <p><button id="Search" class="btn btn-primary btn-lg" href="#Search" role="button">Suchen</button></p>
             </div>
