@@ -69,15 +69,16 @@ function handleNoGeolocation(errorFlag) {
 function setMarkers(tags) {
     // Erstelle neues Maps Objekt
     var map = initializeMap();
-    console.log(getCurrentPosition());
+    console.log(tags);
     var here = getCurrentPosition();
     var list = [];
 
     // Deletes entries in the list of places
     deletePlacesList();
 
-    for(var tag in tags) {
+    tags.forEach(function(tag) {
         var service = new google.maps.places.PlacesService(map);
+        console.log(tag);
         service.nearbySearch({
             location: here,
             radius: 3000,
@@ -96,7 +97,7 @@ function setMarkers(tags) {
                 // TODO: Nichts gefunden
             }
         });
-    }
+    });
 }
 
 /**
