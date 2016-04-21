@@ -5,7 +5,7 @@
  * and affects the 'who'-aspect of the site
  */
 
-console.log("Attempting to load who.js");
+console.log("Attempt to load who.js");
 
 /**
  * Erstellt eine Liste der Orte mit genaueren Angaben zu den einzelnen Resultaten
@@ -16,36 +16,50 @@ function listPlaces(places) {
     if (document.getElementById("whoTableBody") == null) {
         $("#Who table thead").after("" +
             "<tbody id='whoTableBody'></tbody>")
-        console.log("Table body created");
+        //console.log("Table body created");
     } else {
-        console.log("Table body already exists");
+        //console.log("Table body already exists");
     }
 
     places.forEach( function(place) {
 
+        var noData = '<span class="glyphicon glyphicon-ban-circle"></span>'+' Äxcüsi';
         // TODO: Use an icon instead of 'Äxcüsi'
         var name = place.name;
         if (name == undefined)
-            name = 'Äxcüsi';
+            name = noData;
 
         var phone_number = place.formatted_phone_number;
         if (phone_number == undefined)
-            phone_number = 'Äxcüsi';
+            phone_number = noData;
 
         var website = place.website;
         if (website == undefined)
-            website = 'Äxcüsi';
+            website = noData;
 
         var rating = place.rating;
-        if (rating == undefined)
-            rating = 'Äxcüsi';
+        var stars = "";
+        if (rating == undefined) {
+            rating = noData;
+        } else {
+            stars += '<div class="rating">';
+            for (var i = 0; i < rating-1; i++) {
+                stars += '<i class="glyphicon glyphicon-star"></i>';
+            }
+            var half = rating%1;
+            console.log(half);
+            if (half > 0.48) {
+                stars += '<i class="glyphicon glyphicon-star half"></i>';
+            }
+            stars += '</div>';
+        }
 
         var placeDescription = $("" +
             "<tr>" +
             "   <td>"+name+"</td>" +
             "   <td>"+phone_number+"</td>" +
             "   <td>"+website+"</td>" +
-            "   <td>"+rating+"</td>" +
+            "   <td>"+rating+"   "+stars+"</td>" +
             "</tr>");
         $("#whoTableBody").append(placeDescription);
     });
@@ -53,7 +67,7 @@ function listPlaces(places) {
 
 function deletePlacesList() {
     $("#whoTableBody").remove();
-    console.log("table body removed")
+    //console.log("Table body removed")
 }
 
 console.log("Loaded who.js")
