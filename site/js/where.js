@@ -77,26 +77,27 @@ function setMarkers(tags) {
     deletePlacesList();
 
     for(var tag in tags) {
-        var service = new google.maps.places.PlacesService(map);
-        service.nearbySearch({
-            location: here,
-            radius: 3000,
-            types: ['restaurant'],
-            keyword: tag
-        }, function(places, status) {
-            if(status === google.maps.places.PlacesServiceStatus.OK ) {
-                // Setzt Markers auf die Map
-                for (var i = 0; i < places.length; i++) {
-                    createMarker(places[i], map);
-                    list.push(places[i]);
-                }
-                listPlaces(places);
 
-            } else {
-                // TODO: Nichts gefunden
-            }
-        });
     }
+    var service = new google.maps.places.PlacesService(map);
+    service.nearbySearch({
+        location: here,
+        radius: 3000,
+        types: ['restaurant'],
+        keyword: 'pizza'
+    }, function(places, status) {
+        if(status === google.maps.places.PlacesServiceStatus.OK ) {
+            // Setzt Markers auf die Map
+            for (var i = 0; i < places.length; i++) {
+                createMarker(places[i], map);
+                list.push(places[i]);
+            }
+            listPlaces(places);
+
+        } else {
+            // TODO: Nichts gefunden
+        }
+    });
 }
 
 /**
