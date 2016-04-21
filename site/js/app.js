@@ -8,14 +8,13 @@
 console.log("Loaded app.js");
 
 /**
- * Führt alle js Dateien aus, sobald der DOM geladen ist
+ * Führt alle js Dateien aus, sobald der DOM geladen ist und setzt Storage Variabeln
  */
 $("document").ready(function() {
 
     // Lade alle Scripts
     $.getScript("js/what.js", function(){});
     $.getScript("js/nav.js", function(){});
-
     $.getScript("js/where.js", function(){});
     $.getScript("js/who.js", function(){});
 

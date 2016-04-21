@@ -12,12 +12,11 @@ console.log("Loaded where.js");
  *
  * @returns {google.maps.Map} Ein Map Objekt
  */
-function initialize() {
-    var here = new google.maps.LatLng(8, 45);
-    //--> Objekt wird als Center Property in den Karten-Optionen gesetzt.
+function initializeMap() {
+    setCurrentPosition();
 
     //Diese beiden Properties sind zwingend nötig
-    var mapOptions = {center: here, zoom: 15};
+    var mapOptions = {center: getCurrentPosition(), zoom: 15};
 
     //Sicherstellen, dass Element mit der ID=where-screen eine Höhe hat
     //Sonst wird die Karte nicht sichtbar.
@@ -37,40 +36,39 @@ function initialize() {
 }
 
 /**
- * Setzt das Zentrum einer Map auf den aktuellen Standort.
- *
- * @param map Google Maps Objekt
+ * Gets the current position and deploys it in the local storage of the browser
  */
-function setCenter(map) {
-    var center;
-    if(navigator.geolocation) {
-        window.navigator.geolocation.getCurrentPosition(
-            function(position){
-                center = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
-                map.setCenter(center);
-            },function() {
-                handleNoGeolocation(true);
+function setCurrentPosition() {
+    window.navigator.geolocation.getCurrentPosition(
+        function(position){
+            var pos = JSON.stringify({
+                lat:position.coords.latitude,
+                lng:position.coords.longitude
             });
-    } else {
-        center = handleNoGeolocation(false);
-    }
 
-    return center;
+            window.localStorage.setItem("currentPosition", pos);
+        },function() {
+            handleNoGeolocation(true);
+        });
+}
+
+/**
+ * @return JSON object for the current position stored in local storage
+ */
+function getCurrentPosition() {
+    return JSON.parse(window.localStorage.getItem("currentPosition"));
 }
 
 /**
  * Handler um Gelocation Probleme abzuhandeln.
  *
  * @param errorFlag True für Service Problem und false für unterstützungs Problem
- * @returns {string} default Ortschaft
  */
 function handleNoGeolocation(errorFlag) {
     if (errorFlag == true) console.log("Geolocation service failed.");
     else console.log("Your browser doesn't support geolocation.");
 
     map.setCenter("Brugg");
-
-    return "Brugg";
 }
 
 /**
@@ -80,29 +78,33 @@ function handleNoGeolocation(errorFlag) {
  */
 function setMarkers(tags) {
     // Erstelle neues Maps Objekt
-    var map = initialize();
-    var here = setCenter(map);
+    var map = initializeMap();
+    console.log(getCurrentPosition());
+    var here = getCurrentPosition();
+    var list = [];
 
     for(var tag in tags) {
         var service = new google.maps.places.PlacesService(map);
         service.nearbySearch({
             location: here,
-            radius: 500,
+            radius: 3000,
             types: ['restaurant'],
             keyword: tag
-        }, function(results, status) {
+        }, function(places, status) {
             if(status === google.maps.places.PlacesServiceStatus.OK ) {
                 // Creates list in Who view
-                listMarkers(results);
+                //list.add(places);
                 // Setzt Markers auf die Map
-                for (var i = 0; i < results.length; i++) {
-                    createMarker(results[i], map);
+                for (var i = 0; i < places.length; i++) {
+                    createMarker(places[i], map);
                 }
             } else {
                 // TODO: Nichts gefunden
             }
         });
     }
+
+    //listMarkers(list);
 }
 
 /**
@@ -124,7 +126,7 @@ function createMarker(place, map) {
     });
 }
 
-setCenter(initialize());
+initializeMap();
 
 
 

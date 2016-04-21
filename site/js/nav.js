@@ -12,7 +12,6 @@ console.log("Loaded nav.js");
  */
 $("nav ul > li").click(function(event) {
     event.preventDefault();
-    console.log(this)
     var myClass = this;
     var myClassAttr = myClass.className
         .split(" ")
@@ -20,16 +19,23 @@ $("nav ul > li").click(function(event) {
 
     var screens = $("main > section").get();
 
-    if(!$("li."+myClassAttr).hasClass("active")) {
+    pageChange(myClassAttr);
+});
+
+/**
+ * Wechselt zu einer anderen Seite.
+ *
+ * @param to Nimmt einen String: Where, What oder Who
+ */
+function pageChange(to) {
+    if(!$("li."+to).hasClass("active")) {
         // Toggelt Navigations Link Styles
         $("ul.nav > li").removeClass("active");
-        $("ul.nav > li."+myClassAttr).addClass("active");
-
-        //console.log($("li."+myClassAttr).hasClass("active"));
+        $("ul.nav > li."+to).addClass("active");
 
         // Toggelt Sektionen
         $("section").removeClass("active");
         $("section").addClass("inactive");
-        $("section#"+myClassAttr).removeClass("inactive").addClass("active");
+        $("section#"+to).removeClass("inactive").addClass("active");
     }
-});
+}

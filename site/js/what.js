@@ -19,21 +19,15 @@ $("#Search").click(function(event) {
 
     event.preventDefault();
 
-    // Read value from
+    // Lese Wert
     var tags = $("#SearchTag").val();
 
-    // Create array from text
-    var tagsArray = tags.split(',').map( function(s) {
-        return s.trim();
-    })
-
-    console.log(tagsArray);
-
-    // clear values from input
+    // Bereinige Input
     $("#SearchTag").val("");
 
-    // Hand over tags to the where.js controller
+    // Übergebe tags an where.js
     setMarkers(tags);
+<<<<<<< HEAD
 });
 <<<<<<< HEAD
 /*=======
@@ -47,3 +41,9 @@ $("#Search").click(function(event) {
 >>>>>>> 172e8f64031aa88f5e21e12f5f42f5a2d7d62e30*/
 =======
 >>>>>>> a39deacc93e31e7e4db50b23a0f7ca5ef0060cb9
+=======
+
+    // Wechsle zur where Seite
+    pageChange("Where");
+});
+>>>>>>> 37faf524dee79e717746a53c256d210d59c94f82
