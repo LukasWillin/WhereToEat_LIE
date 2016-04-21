@@ -26,5 +26,3 @@ $("#Search").click(function(event) {
     // Wechsle zur where Seite
     pageChange("Where");
 });
-
-
