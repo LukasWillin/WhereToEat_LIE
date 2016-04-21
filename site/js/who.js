@@ -23,12 +23,29 @@ function listPlaces(places) {
 
     places.forEach( function(place) {
 
+        // TODO: Use an icon instead of 'Äxcüsi'
+        var name = place.name;
+        if (name == undefined)
+            name = 'Äxcüsi';
+
+        var phone_number = place.formatted_phone_number;
+        if (phone_number == undefined)
+            phone_number = 'Äxcüsi';
+
+        var website = place.website;
+        if (website == undefined)
+            website = 'Äxcüsi';
+
+        var rating = place.rating;
+        if (rating == undefined)
+            rating = 'Äxcüsi';
+
         var placeDescription = $("" +
             "<tr>" +
-            "   <td>"+place.name+"</td>" +
-            "   <td>"+place.formatted_phone_number+"</td>" +
-            "   <td>"+place.website+"</td>" +
-            "   <td>"+place.rating+"</td>" +
+            "   <td>"+name+"</td>" +
+            "   <td>"+phone_number+"</td>" +
+            "   <td>"+website+"</td>" +
+            "   <td>"+rating+"</td>" +
             "</tr>");
         $("#whoTableBody").append(placeDescription);
     });
