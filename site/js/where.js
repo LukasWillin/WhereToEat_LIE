@@ -22,16 +22,6 @@ function initializeMap() {
     //Sonst wird die Karte nicht sichtbar.
     var map = new google.maps.Map(document.getElementById('where-screen'), mapOptions);
 
-<<<<<<< HEAD
-    setCenter(map);
-
-    // Wenn Markers parameter besteht, sollen diese gesetzt werden.
-    if(typeof markers !== 'undefined') {
-        // TODO
-    }
-
-=======
->>>>>>> a39deacc93e31e7e4db50b23a0f7ca5ef0060cb9
     return map;
 }
 
