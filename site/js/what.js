@@ -17,9 +17,6 @@ $("#Search").click(function(event) {
     // Lese Wert
     var tags = $("#SearchTag").val();
 
-    // Bereinige Input
-    $("#SearchTag").val("");
-
     // Übergebe tags an where.js
     setMarkers(tags);
 
