@@ -82,7 +82,7 @@ function setMarkers(tags) {
             location: here,
             radius: 3000,
             types: ['restaurant'],
-            keyword: 'pizza'
+            keyword: tag
         }, function(places, status) {
             if(status === google.maps.places.PlacesServiceStatus.OK ) {
                 // Setzt Markers auf die Map
