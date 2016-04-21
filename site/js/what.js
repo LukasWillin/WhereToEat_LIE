@@ -13,10 +13,13 @@ console.log("Loaded what.js");
  */
 $("#Search").click(function(event) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 //<<<<<<< HEAD
 =======
 >>>>>>> a39deacc93e31e7e4db50b23a0f7ca5ef0060cb9
 
+=======
+>>>>>>> 3090711468d42c16398edd6599be9bd6f548ea9f
     event.preventDefault();
 
     // Lese Wert
@@ -27,6 +30,7 @@ $("#Search").click(function(event) {
 
     // Übergebe tags an where.js
     setMarkers(tags);
+<<<<<<< HEAD
 <<<<<<< HEAD
 });
 <<<<<<< HEAD
@@ -47,3 +51,9 @@ $("#Search").click(function(event) {
     pageChange("Where");
 });
 >>>>>>> 37faf524dee79e717746a53c256d210d59c94f82
+=======
+
+    // Wechsle zur where Seite
+    pageChange("Where");
+});
+>>>>>>> 3090711468d42c16398edd6599be9bd6f548ea9f

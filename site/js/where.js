@@ -83,6 +83,9 @@ function setMarkers(tags) {
     var here = getCurrentPosition();
     var list = [];
 
+    // Deletes entries in the list of places
+    deletePlacesList();
+
     for(var tag in tags) {
         var service = new google.maps.places.PlacesService(map);
         service.nearbySearch({
@@ -92,19 +95,18 @@ function setMarkers(tags) {
             keyword: tag
         }, function(places, status) {
             if(status === google.maps.places.PlacesServiceStatus.OK ) {
-                // Creates list in Who view
-                //list.add(places);
                 // Setzt Markers auf die Map
                 for (var i = 0; i < places.length; i++) {
                     createMarker(places[i], map);
+                    list.push(places[i]);
                 }
+                listPlaces(places);
+
             } else {
                 // TODO: Nichts gefunden
             }
         });
     }
-
-    //listMarkers(list);
 }
 
 /**
