@@ -20,28 +20,61 @@ main {
 /* Header */
 #titleBar {
     text-align: center;
+    color: white;
+}
+body {
+    background-image: url(http://www.henneferwirtshaus.de/wp-content/uploads/2013/06/hintergrund.jpg);
 }
 
 /* Navigation */
 @media(min-width: 767px) {
     .navbar-nav {
-        display:table;
-        width:100%;
+        display: table;
+        width: 100%;
         margin: 0;
     }
+
     .navbar-nav > li {
-        float:none;
-        display:table-cell;
-        text-align:center;
+        float: none;
+        display: table-cell;
+        text-align: center;
     }
 }
+
 .inactive {
     visibility: hidden;
     height: 0;
 }
+
 .active {
     visibility: visible;
     height: auto;
+}
+
+#Nav {
+    background-color: #928167;
+}
+
+.navbar-default{
+    border-color: #928167;
+}
+
+.navbar-default .navbar-nav > li > a{
+    color: white;
+}
+
+.navbar-default .navbar-nav > .active > a {
+    color: black;
+    background: #ac9b7d;
+}
+
+.navbar-default .navbar-nav > .active > a:focus{
+    background: #ac9b7d;
+}
+
+.navbar-default .navbar-nav > .active > a:hover{
+    background-color: #ac9b7d;
+    color: black;
 }
 
 /* Where view */
@@ -65,9 +98,11 @@ main {
     font-size: 14px;
     color: #e67e22;
 }
+
 .glyphicon-star.half {
     position: relative;
 }
+
 .glyphicon-star.half:before {
     position: relative;
     z-index: 9;
@@ -75,6 +110,7 @@ main {
     display: block;
     overflow: hidden;
 }
+
 .glyphicon-star.half:after {
     content: '\e006';
     position: absolute;
@@ -84,5 +120,24 @@ main {
     left: 0;
 }
 
+#Who{
+    background-color: #928167;
+    color: white;
+}
+
+.table > tbody > tr > td{
+    color: black;
+}
+
 /* What view */
+.jumbotron{
+    background-color: #928167;
+    color: white;
+}
+
+#Search{
+    background-color: #928167;
+    border: none;
+}
+
 
