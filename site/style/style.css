@@ -77,6 +77,10 @@ body {
     color: black;
 }
 
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #ffffff;
+}
+
 /* Where view */
 #where-screen {
     height: 400px;

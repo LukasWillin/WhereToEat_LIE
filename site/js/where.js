@@ -65,6 +65,7 @@ function handleNoGeolocation(errorFlag) {
  * Setzt alle Markers auf eine neue Map.
  *
  * @param tags Array von Suchbegriffen als Strings
+ * @param radius ein Integer Wert
  */
 function setMarkers(tags, radius) {
     // Erstelle neues Maps Objekt
