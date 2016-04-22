@@ -70,7 +70,6 @@ function setMarkers(tags) {
     // Erstelle neues Maps Objekt
     var map = initializeMap();
     var here = getCurrentPosition();
-    var list = [];
 
     // Deletes entries in the list of places
     deletePlacesList();
@@ -79,19 +78,17 @@ function setMarkers(tags) {
         var service = new google.maps.places.PlacesService(map);
         service.nearbySearch({
             location: here,
-            radius: 3000,
+            radius: 1000,
             types: ['restaurant', 'bar', 'bakery', 'cafe', 'meal_delivery', 'meal_takeaway'],
-            keyword: 'asfdashfdshfhsdffhadfhald'
+            keyword: tag
         }, function(places, status) {
             if(status === google.maps.places.PlacesServiceStatus.OK
                 && status != google.maps.places.PlacesServiceStatus.INVALID_REQUEST) {
                 // Setzt Markers auf die Map
                 for (var i = 0; i < places.length; i++) {
                     createMarker(places[i], map);
-                    list.push(places[i]);
                 }
-                listPlaces(places);
-
+                listPlaces(places, map);
             } else {
                 // TODO: Nichts gefunden
             }
