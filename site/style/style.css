@@ -140,4 +140,7 @@ body {
     border: none;
 }
 
+#radiusSlider .slider-selection {
+    background: #BABABA;
+}
 

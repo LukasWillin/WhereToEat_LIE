@@ -66,7 +66,7 @@ function handleNoGeolocation(errorFlag) {
  *
  * @param tags Array von Suchbegriffen als Strings
  */
-function setMarkers(tags) {
+function setMarkers(tags, radius) {
     // Erstelle neues Maps Objekt
     var map = initializeMap();
     var here = getCurrentPosition();
@@ -78,7 +78,7 @@ function setMarkers(tags) {
         var service = new google.maps.places.PlacesService(map);
         service.nearbySearch({
             location: here,
-            radius: 1000,
+            radius: radius,
             types: ['restaurant', 'bar', 'bakery', 'cafe', 'meal_delivery', 'meal_takeaway'],
             keyword: tag
         }, function(places, status) {

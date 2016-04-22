@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="style/normalize.css"/>
     <link rel="stylesheet" type="text/css" href="style/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="style/bootstrap-select.min.css">
+    <link rel="stylesheet" type="text/css" href="style/bootstrap-slider.min.css">
     <link rel="stylesheet" type="text/css" href="style/style.css"/>
     <link rel="shortcut icon" type="image/x-icon" href="Kochmuetze.ico" />
 
@@ -62,7 +63,7 @@
             <div class="container">
                 <h1>Willkommen auf Where To Eat!</h1>
                 <p>Gib unten Deinen Wunsch ein und wir suchen es für Dich</p>
-                <select class="selectpicker" id="SearchTag" multiple title="Wähle aus...">
+                <select class="selectpicker" id="SearchTag" multiple title="Restaurant Typ...">
                     <optgroup label="Slow Food">
                         <option>Pasta</option>
                         <option>Asiatisch</option>
@@ -76,6 +77,11 @@
                 </select>
                 <br/>
                 <br/>
+                <p>In welcher maximaler Entfernung willst Du Suchen?</p>
+                <input id="Radius" data-slider-id='radiusSlider' type="text"
+                       data-slider-min="100" data-slider-max="5000" data-slider-step="200" data-slider-value="500"/>
+                <br/>
+                <br/>
                 <p><button id="Search" class="btn btn-primary btn-lg" href="#Search" role="button">Suchen</button></p>
             </div>
         </div>
@@ -87,7 +93,8 @@
         src='http://maps.googleapis.com/maps/api/js?libraries=places&v=3'></script>
 <script type="text/javascript" src="lib/jquery-2.2.1.js"></script>
 <script type="text/javascript" src="lib/bootstrap.min.js"></script>
-<script src="lib/bootstrap-select.min.js"></script>
+<script type="text/javascript" src="lib/bootstrap-select.min.js"></script>
+<script type="text/javascript" src="lib/bootstrap-slider.min.js"></script>
 <script type="text/javascript" src="js/app.js"></script>
 </body>
 </html>

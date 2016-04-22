@@ -14,15 +14,25 @@ console.log("Loaded what.js");
 $("#Search").click(function(event) {
     event.preventDefault();
 
-    // Lese Wert
+    // Lese Werte
     var tags = $("#SearchTag").val();
+    var radius = $('#Radius').slider('getValue');
 
-    // Übergebe tags an where.js
-    setMarkers(tags);
+    // Übergebe Tags und Radius an where.js
+    setMarkers(tags, radius);
 
     // Wechsle zur where Seite
     pageChange("Where");
 
 });
 
+/**
+ * Erstellt aus einem Text Input eine Radius Slider Instanz.
+ *
+ * @param id die ID des Elementes
+ */
+function createSlider(id) {
+    $('#'+id).slider();
+}
 
+createSlider("Radius");
