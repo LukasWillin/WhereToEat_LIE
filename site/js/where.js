@@ -67,7 +67,7 @@ function handleNoGeolocation(errorFlag) {
  * @param tags Array von Suchbegriffen als Strings
  */
 function setMarkers(tags) {
-    // Erstelle neues Maps Objekt
+    // Creates a new maps-object
     var map = initializeMap();
     var here = getCurrentPosition();
 
@@ -109,7 +109,14 @@ function createMarker(place, map) {
         position: place.geometry.location
     });
 
-    google.maps.event.addListener(marker, 'click', function() {
+    var myLocationMarker = new google.maps.Marker({
+        map: map,
+        position: getCurrentPosition(),
+        title: 'Mein Standort'
+    });
+
+
+    google.maps.event.addListener(myLocationMarker, marker, 'click', function() {
         infowindow.setContent(place.name);
         infowindow.open(map, this);
     });
