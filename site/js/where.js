@@ -15,11 +15,11 @@ console.log("Loaded where.js");
 function initializeMap() {
     setCurrentPosition();
 
-    //Diese beiden Properties sind zwingend nötig
+    //These properties are absolutely necessary
     var mapOptions = {center: getCurrentPosition(), zoom: 15};
 
-    //Sicherstellen, dass Element mit der ID=where-screen eine Höhe hat
-    //Sonst wird die Karte nicht sichtbar.
+    // Ensure that the element with the ID = where-screen has a height
+    // Otherwise, the card is not visible.
     var map = new google.maps.Map(document.getElementById('where-screen'), mapOptions);
 
     return map;
@@ -84,7 +84,7 @@ function setMarkers(tags) {
         }, function(places, status) {
             if(status === google.maps.places.PlacesServiceStatus.OK
                 && status != google.maps.places.PlacesServiceStatus.INVALID_REQUEST) {
-                // Setzt Markers auf die Map
+                // Sets the marker on the map
                 for (var i = 0; i < places.length; i++) {
                     createMarker(places[i], map);
                 }

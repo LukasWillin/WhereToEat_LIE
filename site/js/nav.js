@@ -33,7 +33,7 @@ function pageChange(to) {
         $("ul.nav > li").removeClass("active");
         $("ul.nav > li."+to).addClass("active");
 
-        // Toggelt Sektionen
+        // Toggelt sections
         $("section").removeClass("active");
         $("section").addClass("inactive");
         $("section#"+to).removeClass("inactive").addClass("active");

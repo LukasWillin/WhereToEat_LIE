@@ -12,7 +12,7 @@ console.log("Loaded app.js");
  */
 $("document").ready(function() {
 
-    // Lade alle Scripts
+    // load all scripts
     $.getScript("js/what.js", function(){});
     $.getScript("js/nav.js", function(){});
     $.getScript("js/where.js", function(){});

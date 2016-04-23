@@ -14,13 +14,13 @@ console.log("Loaded what.js");
 $("#Search").click(function(event) {
     event.preventDefault();
 
-    // Lese Wert
+    // read value
     var tags = $("#SearchTag").val();
 
-    // Übergebe tags an where.js
+    // Handover tags to where.js
     setMarkers(tags);
 
-    // Wechsle zur where Seite
+    // Switch to where-side
     pageChange("Where");
 
 });

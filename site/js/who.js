@@ -21,7 +21,7 @@ function listPlaces(places, map) {
         console.log("Table body already exists");
     }
 
-    // Konservative foreach schleife! Ansonsten kann die asynchrone callback methode nicht alle anfragen beantworten
+    // conservative foreach-loop! Otherwise, the asynchronous callback-method can't answer all the requests.
     for (var i = 0; i < places.length; i++) {
         console.log(places[i]);
         if(places[i]) {
