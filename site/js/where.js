@@ -111,6 +111,11 @@ function createMarker(place, map) {
         map: map,
         position: place.geometry.location
     });
+    var myLocationMarker = new google.maps.Marker({
+        map: map,
+        position: getCurrentPosition(),
+        title: 'Mein Standort'
+    });
 
     var website = place.website;
     if (website == undefined)
@@ -129,7 +134,7 @@ function createMarker(place, map) {
     });
 
     marker.addListener('click', function() {
-        infowindow.open(map, marker);
+        infowindow.open(map, marker, myLocationMarker);
 
     });
 }
