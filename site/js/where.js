@@ -65,9 +65,12 @@ function handleNoGeolocation(errorFlag) {
  * Setzt alle Markers auf eine neue Map.
  *
  * @param tags Array von Suchbegriffen als Strings
+ * @param radius ein Integer Wert
  */
-function setMarkers(tags) {
+
+function setMarkers(tags, radius) {
     // Creates a new maps-object
+
     var map = initializeMap();
     var here = getCurrentPosition();
 
@@ -78,7 +81,7 @@ function setMarkers(tags) {
         var service = new google.maps.places.PlacesService(map);
         service.nearbySearch({
             location: here,
-            radius: 1000,
+            radius: radius,
             types: ['restaurant', 'bar', 'bakery', 'cafe', 'meal_delivery', 'meal_takeaway'],
             keyword: tag
         }, function(places, status) {
@@ -109,16 +112,25 @@ function createMarker(place, map) {
         position: place.geometry.location
     });
 
-    var myLocationMarker = new google.maps.Marker({
-        map: map,
-        position: getCurrentPosition(),
-        title: 'Mein Standort'
+    var website = place.website;
+    if (website == undefined)
+        website = '#';
+
+    var contentString = '<div id="content">'+
+                        '<h3>'+place.name+'</h3>'+
+                        '<div id="bodyContent">'+
+                        '<p></p>'+
+                        '<p><a href="'+website+'">Gehe zur Webseite</a></p>'+
+                        '</div>'+
+                        '</div>';
+
+    var infowindow = new google.maps.InfoWindow({
+        content: contentString
     });
 
+    marker.addListener('click', function() {
+        infowindow.open(map, marker);
 
-    google.maps.event.addListener(myLocationMarker, marker, 'click', function() {
-        infowindow.setContent(place.name);
-        infowindow.open(map, this);
     });
 }
 

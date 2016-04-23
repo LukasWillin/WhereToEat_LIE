@@ -16,13 +16,23 @@ $("#Search").click(function(event) {
 
     // read value
     var tags = $("#SearchTag").val();
+    var radius = $('#Radius').slider('getValue');
 
-    // Handover tags to where.js
-    setMarkers(tags);
+    // Handover tags and radius to where.js
+    setMarkers(tags, radius);
 
     // Switch to where-side
     pageChange("Where");
 
 });
 
+/**
+ * Erstellt aus einem Text Input eine Radius Slider Instanz.
+ *
+ * @param id die ID des Elementes
+ */
+function createSlider(id) {
+    $('#'+id).slider();
+}
 
+createSlider("Radius");

@@ -32,12 +32,16 @@ function listPlaces(places, map) {
     }
 };
 
+/**
+ * Erstellt eine Liste der gefundenen Orte
+ *
+ * @param placeResult
+ */
 function displayPlaceDetails(placeResult){
     if (placeResult) {
 
-        var noData = '<span class="glyphicon glyphicon-ban-circle"></span>' + ' Äxcüsi';
+        var noData = '<span class="glyphicon glyphicon-ban-circle"></span>';
 
-        // TODO: Use an icon instead of 'Äxcüsi'
         var name = placeResult.name;
         if (name == undefined)
             name = noData;
@@ -78,6 +82,9 @@ function displayPlaceDetails(placeResult){
     }
 };
 
+/**
+ * Löscht alle vorhergehenden Daten in der Liste
+ */
 function deletePlacesList() {
     $("#whoTableBody").remove();
     console.log("Table body removed")
