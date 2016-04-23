@@ -11,7 +11,7 @@ console.log("Attempt to load who.js");
  * Erstellt eine Liste der Orte mit genaueren Angaben zu den einzelnen Resultaten
  * @param an array of type placeResult
  */
-function listPlaces(places, map) {
+function listPlaces() {
 
     if (document.getElementById("whoTableBody") == null) {
         $("#Who table thead").after("" +
@@ -21,12 +21,13 @@ function listPlaces(places, map) {
         console.log("Table body already exists");
     }
 
+    placeResults = getAllPlaceResults();
+    console.log(placeResults);
     // Konservative foreach schleife! Ansonsten kann die asynchrone callback methode nicht alle anfragen beantworten
-    for (var i = 0; i < places.length; i++) {
-        console.log(places[i]);
-        if(places[i]) {
-            service = new google.maps.places.PlacesService(map);
-            service.getDetails({placeId:places[i].place_id}, displayPlaceDetails);
+    for (var i = 0; i < placeResults.length; i++) {
+        //console.log(placesResults[i]);
+        if(placeResults[i]) {
+            displayPlaceDetails(placeResults[i]);
         }
 
     }
