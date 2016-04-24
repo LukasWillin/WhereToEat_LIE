@@ -92,6 +92,7 @@ function setMarkers(tags, radius) {
                     createMarker(places[i], map);
                 }
                 listPlaces(places, map);
+
             } else {
                 // TODO: Nichts gefunden
             }
@@ -106,6 +107,7 @@ function setMarkers(tags, radius) {
  * @param map
  */
 function createMarker(place, map) {
+
     var placeLoc = place.geometry.location;
     var marker = new google.maps.Marker({
         map: map,
@@ -125,7 +127,7 @@ function createMarker(place, map) {
                         '<h3>'+place.name+'</h3>'+
                         '<div id="bodyContent">'+
                         '<p></p>'+
-                        '<p><a href="'+website+'">Gehe zur Webseite</a></p>'+
+                        '<p id="infoLink"><a href="'+website+'">Gehe zur Webseite</a></p>'+
                         '</div>'+
                         '</div>';
 
@@ -138,6 +140,10 @@ function createMarker(place, map) {
 
     });
 }
+
+$('#bodyContent').on('click', function() {
+    pageChange('Who');
+})
 
 initializeMap();
 
