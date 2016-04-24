@@ -5,13 +5,11 @@
  * and affects the 'who'-aspect of the site
  */
 
-console.log("Attempt to load who.js");
-
 /**
  * Erstellt eine Liste der Orte mit genaueren Angaben zu den einzelnen Resultaten
  * @param an array of type placeResult
  */
-function listPlaces() {
+function listPlaces(places, map) {
 
     if (document.getElementById("whoTableBody") == null) {
         $("#Who table thead").after("" +
@@ -20,16 +18,13 @@ function listPlaces() {
     } else {
         console.log("Table body already exists");
     }
+    var service = service = new google.maps.places.PlacesService(map);
 
-    placeResults = getAllPlaceResults();
-    console.log(placeResults);
     // Konservative foreach schleife! Ansonsten kann die asynchrone callback methode nicht alle anfragen beantworten
-    for (var i = 0; i < placeResults.length; i++) {
-        //console.log(placesResults[i]);
-        if(placeResults[i]) {
-            displayPlaceDetails(placeResults[i]);
+    for (var i = 0; i < places.length; i++) {
+        if(places[i]) {
+            displayPlaceDetails(places[i]);
         }
-
     }
 };
 
@@ -39,6 +34,8 @@ function listPlaces() {
  * @param placeResult
  */
 function displayPlaceDetails(placeResult){
+    var exists = $("#"+placeResult.place_id);
+    console.log(exists);
     if (placeResult) {
 
         var noData = '<span class="glyphicon glyphicon-ban-circle"></span>';
@@ -47,13 +44,14 @@ function displayPlaceDetails(placeResult){
         if (name == undefined)
             name = noData;
 
-        var phone_number = placeResult.formatted_phone_number;
+        // Not included in normal result object returned by nearby search
+        /*var phone_number = placeResult.formatted_phone_number;
         if (phone_number == undefined)
             phone_number = noData;
 
         var website = placeResult.website;
         if (website == undefined)
-            website = noData;
+            website = noData;*/
 
         var rating = placeResult.rating;
         var stars = "";
@@ -72,14 +70,14 @@ function displayPlaceDetails(placeResult){
         }
 
         var placeDescription = $("" +
-            "<tr>" +
+            "<tr id='"+placeResult.place_id+"'>" +
             "   <td>" + name + "</td>" +
-            "   <td>" + phone_number + "</td>" +
-            "   <td>" + website + "</td>" +
+            //"   <td>" + phone_number + "</td>" +
+            //"   <td>" + website + "</td>" +
             "   <td>" + rating + "  " + stars + "</td>" +
             "</tr>");
+
         $("#whoTableBody").append(placeDescription);
-        console.log("appended");
     }
 };
 

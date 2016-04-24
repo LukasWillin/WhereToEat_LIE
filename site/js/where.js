@@ -89,67 +89,13 @@ function setMarkers(tags, radius) {
                 for (var i = 0; i < places.length; i++) {
                     createMarker(places[i], map);
                 }
-                placesToLocalStorage(places, map);
+                listPlaces(places, map);
+
             } else {
                 // TODO: Nichts gefunden
             }
         });
     });
-
-    listPlaces()
-}
-
-/**
- * stores an array of places in the local storage
- * the given places are enriched with information during the process
- * @param places array of places
- * @param map google maps object
- */
-function placesToLocalStorage(places, map) {
-    for (var i = 0; i < places.length; i++) {
-        service = new google.maps.places.PlacesService(map);
-        service.getDetails({placeId:places[i].place_id}, storeSinglePlaceResult);
-    }
-}
-
-/**
- * stores a single placeResult
- * the place result is retrieved from the google places api
- * by the place_id
- * @param placeResult
- */
-function storeSinglePlaceResult(placeResult) {
-    var placesJSON = [];
-    if(window.localStorage.getItem('places')) {
-        placesJSON = JSON.parse(window.localStorage.getItem('places'));
-        window.localStorage.removeItem('places');
-    } else {
-        //window.localStorage.setItem('places', "");
-    }
-
-    placesJSON.push(placeResult);
-    //console.log(placesJSON);
-    var string = JSON.stringify(placesJSON);
-    window.localStorage.setItem('places', string);
-}
-
-/**
- * Returns a detailed placeResult from a placeId
- * @param place_id id of the place
- * @returns placeResult google places api place_result object
- */
-function getDetailedPlaceResult(place_id) {
-    return JSON.parse(window.localStorage.getItem('places'))
-        .find(function(placeResult) {
-            if (placeResult.place_id == place_id)
-                return true;
-            else
-                return false;
-        });
-}
-
-function getAllPlaceResults() {
-    return JSON.parse(window.localStorage.getItem('places'));
 }
 
 /**
@@ -159,8 +105,6 @@ function getAllPlaceResults() {
  * @param map
  */
 function createMarker(place, map) {
-
-    place = getDetailedPlaceResult(place.place_id);
 
     var placeLoc = place.geometry.location;
     var marker = new google.maps.Marker({
